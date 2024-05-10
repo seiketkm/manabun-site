@@ -20,7 +20,7 @@ export default function Home() {
     window.location.href = 'https://tigmanabun.jp/user/sign_in';
   };
 
-  const { email, password, handleEmailChange, handlePasswordChange, handleSubmit } = useLoginForm(submit);
+  const { email, password, disabled, handleEmailChange, handlePasswordChange, handleSubmit } = useLoginForm(submit);
 
   return (
     <Flex height="100vh" alignItems="center" justifyContent="center">
@@ -42,7 +42,7 @@ export default function Home() {
           value={password}
           onChange={handlePasswordChange}
         />
-        <Button mb={6} colorScheme="teal" onClick={handleSubmit}>
+        <Button mb={6} colorScheme="teal" onClick={handleSubmit} isDisabled={disabled}>
           Log in
         </Button>
       </Flex>

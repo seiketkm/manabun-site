@@ -10,10 +10,11 @@ export function useLoginForm(submit: (email: string, password: string) => Promis
   const handleSubmit = async () => {
     await submit(email, password);
   };
-
+  const disabled = email === '' || password === '';
   return {
     email,
     password,
+    disabled,
     handleEmailChange,
     handlePasswordChange,
     handleSubmit
